@@ -1,16 +1,10 @@
 # Use Debian bookworm (stable) as base image
-FROM ubuntu:22.04
+FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
 
 # Install Python and system dependencies for video processing
-RUN echo '''deb http://mirror.yandex.ru/debian/ bookworm main contrib non-free non-free-firmware \
-deb-src http://mirror.yandex.ru/debian/ bookworm main contrib non-free non-free-firmware \
-deb http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware \
-deb-src http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware \
-deb http://mirror.yandex.ru/debian/ bookworm-updates main contrib non-free non-free-firmware \
-deb-src http://mirror.yandex.ru/debian/ bookworm-updates main contrib non-free non-free-firmware''' > /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
