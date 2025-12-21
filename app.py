@@ -52,7 +52,7 @@ def create_comparison_interface():
         with gr.Row():
             pdf_download = gr.DownloadButton(
                 "Diploma PDF",
-                value="assets/diploma.pdf"
+                value="assets/paper/diploma.pdf"
             )
 
         with gr.Row():
